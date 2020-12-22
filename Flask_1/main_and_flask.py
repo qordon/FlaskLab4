@@ -5,7 +5,7 @@ from db import insert_temperatures, get_temperatures, update_levels, get_limits,
     get_heater_state
 import threading
 import time
-import Lab2_Functional
+import Tkinter_Manager
 
 M1 = 14
 M2 = 32
@@ -15,11 +15,11 @@ max_temperature_limit = 0
 
 
 def start_tkinter():
-    root = Lab2_Functional.Window()
+    root = Tkinter_Manager.Window()
     root.mainloop()
 
 
-def clock():
+def check_heater():
     interval = 5
     while True:
         generated_temperature = random.randint(M1, M2)
@@ -61,11 +61,16 @@ def change_brightness(value):
 def temperature():
     last_temperatures = []
     last_dates = []
+    min_temperature_limit, max_temperature_limit = get_limits()
     for record in get_temperatures(10):
         last_temperatures.append(record[1])
         last_dates.append(str(record[0][10:19]))
     states_temperature['hall'] = last_temperatures[-1]
-    return jsonify({'temperatures': last_temperatures, 'dates': last_dates, 'heater_state': get_heater_state()})
+    return jsonify({'temperatures': last_temperatures,
+                    'dates': last_dates,
+                    'heater_state': get_heater_state(),
+                    'min': min_temperature_limit,
+                    'max': max_temperature_limit})
 
 
 @app.route('/set_temperature_limits/<values>', methods=['GET'])
@@ -88,7 +93,7 @@ if __name__ == '__main__':
     tkinter_thread.daemon = True
     tkinter_thread.start()
 
-    temperature_thread = threading.Thread(target=clock, args=())
+    temperature_thread = threading.Thread(target=check_heater, args=())
     temperature_thread.daemon = True
     temperature_thread.start()
 

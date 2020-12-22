@@ -1,5 +1,7 @@
 var dates = []
 var temperatures = []
+var min_limit = []
+var max_limit = []
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart;
 
@@ -25,7 +27,17 @@ function create_graphic()
     backgroundColor: "rgba(0, 0, 0, 0)",
     label: "Температура в комнате С",
     data: temperatures,
-     }]
+     },
+     {
+    borderColor: "rgb(0, 0, 255)",
+    backgroundColor: "rgba(0, 0, 0, 0)",
+    label: "Нижний порого",
+    data: min_limit,},
+    {
+    borderColor: "rgb(255, 0, 0)",
+    backgroundColor: "rgba(255, 0, 0, 0)",
+    label: "Верхний порог",
+    data: max_limit,}]
     };
 
     chart = new Chart(ctx, {
@@ -46,15 +58,27 @@ function update_temperature()
                 {
                     temperatures = data["temperatures"];
                     dates = data["dates"];
+                    for(var i = 0; i < 10; i+= 1){
+                        min_limit[i] = data['min'];
+                        max_limit[i] = data['max'];
+                    }
                     create_graphic();
                 }
                 else
                 {
                     chart.data.labels.splice(0,1);
                     chart.data.datasets[0].data.splice(0,1);
+                    chart.data.datasets[1].data.splice(0,1);
+                    chart.data.datasets[2].data.splice(0,1);
 
                     chart.data.labels.push(data["dates"][9]);
                     chart.data.datasets[0].data.push(data["temperatures"][9]);
+                    for(var i = 0; i < 10; i+= 1){
+                        min_limit[i] = data['min'];
+                        max_limit[i] = data['max'];
+                    }
+                    chart.data.datasets[1].data = min_limit;
+                    chart.data.datasets[2].data = max_limit;
                     chart.update();
                 }
 
