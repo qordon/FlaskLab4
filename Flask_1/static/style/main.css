@@ -1,0 +1,87 @@
+body{
+    background-image = url(static/images/fon.jpg);
+}
+
+.round-ON{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: yellow;
+    border: 3px solid;
+    /*margin-top: 300px;*/
+}
+
+.round-OFF{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: black;
+}
+
+.bulb{
+    position: absolute;
+    width: 60px;
+}
+
+#lamp{
+    margin-left: 52%;
+    margin-top: 3%;
+}
+
+#t-hall{
+    font-size: 36px;
+    position: absolute;
+    margin-left: 52%;
+    margin-top: 10%;
+}
+
+#change-bright{
+    position: absolute;
+    margin-top: 19.5%;
+    margin-left: 60%;
+}
+
+#value-bright{
+    font-size: 24px;
+    position: absolute;
+    margin-left: 47%;
+    margin-top: 16%;
+}
+
+#info{
+    text-align:center;
+}
+
+.rooms{
+    padding-left: 40%;
+}
+#test{
+    background-color: black;
+}
+
+.button7 {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: rgb(64,199,129);
+  box-shadow: 0 -3px rgb(53,167,110) inset;
+  transition: 0.2s;
+}
+.button7:hover { background: rgb(53, 167, 110); }
+.button7:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
+}
+
+#manager{
+    margin: 50px 0px 0px 570px;
+    width : 450px;
+}
+
+.temperature_entry{
+    width:50px;
+}
