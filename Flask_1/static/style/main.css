@@ -1,7 +1,3 @@
-body{
-    background-image = url(static/images/fon.jpg);
-}
-
 .round-ON{
     position: absolute;
     width: 30px;
@@ -9,15 +5,6 @@ body{
     border-radius: 50px;
     background-color: yellow;
     border: 3px solid;
-    /*margin-top: 300px;*/
-}
-
-.round-OFF{
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    background-color: black;
 }
 
 .bulb{
@@ -26,27 +13,27 @@ body{
 }
 
 #lamp{
-    margin-left: 52%;
+    margin-left: 13%;
     margin-top: 3%;
 }
 
 #t-hall{
     font-size: 36px;
     position: absolute;
-    margin-left: 52%;
+    margin-left: 13%;
     margin-top: 10%;
 }
 
 #change-bright{
     position: absolute;
-    margin-top: 19.5%;
-    margin-left: 60%;
+    margin-top: 16%;
+    margin-left: 20%;
 }
 
 #value-bright{
     font-size: 24px;
     position: absolute;
-    margin-left: 47%;
+    margin-left: 7%;
     margin-top: 16%;
 }
 
@@ -54,9 +41,6 @@ body{
     text-align:center;
 }
 
-.rooms{
-    padding-left: 40%;
-}
 #test{
     background-color: black;
 }
@@ -67,8 +51,8 @@ body{
   text-decoration: none;
   padding: .8em 1em calc(.8em + 3px);
   border-radius: 3px;
-  background: rgb(64,199,129);
-  box-shadow: 0 -3px rgb(53,167,110) inset;
+  background: rgb(59, 160, 237);
+  box-shadow: 0 -3px rgb(59, 160, 237) inset;
   transition: 0.2s;
 }
 .button7:hover { background: rgb(53, 167, 110); }
@@ -78,7 +62,10 @@ body{
 }
 
 #manager{
-    margin: 50px 0px 0px 570px;
+    position: absolute;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
     width : 450px;
 }
 

@@ -10,18 +10,20 @@ class Window(Tk):
     def __init__(self, sensor=None):
         super().__init__()
 
+        W, H = 940, 600
+
         self.temperature_values = []
         self.min_temperature = 10
         self.max_temperature = 30
         self.date = []
 
         self.title("Пилипенко Р.О.")
-        self.geometry('720x400+400+100')
+        self.geometry('940x600+350+150')
         self.resizable(width=False, height=False)
 
         self.figure = plt.Figure(figsize=(2, 2))
         self.canvas = FigureCanvasTkAgg(self.figure, self)
-        self.canvas.get_tk_widget().place(x=0, y=0, width=720, height=400)
+        self.canvas.get_tk_widget().place(x=0, y=0, width=W, height=H)
         self.ax = self.figure.add_subplot(111)
 
         self.anim = FuncAnimation(self.figure, self.check_values, init_func=None, interval=3000)

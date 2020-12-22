@@ -11,7 +11,7 @@ var chartOptions = {
     display: true,
     labels: {
       boxWidth: 80,
-      fontColor: 'red'
+      fontColor: 'black'
     }
   }
 };
@@ -22,8 +22,8 @@ function create_graphic()
     labels: dates,
     datasets: [{
     borderColor: "rgb(100,100,100)",
-    backgroundColor: "rgb(0,255,255)",
-    label: "Temperature (C)",
+    backgroundColor: "rgba(0, 0, 0, 0)",
+    label: "Температура в комнате С",
     data: temperatures,
      }]
     };
@@ -83,7 +83,7 @@ function switchBulb(){
             url: '/lamp'
         })
         .done(function(data){
-            if(data['hall'] == false){
+            if(!data['hall']){
                 bulb.src = '/static/images/bulb-on.png';
             }
             else{

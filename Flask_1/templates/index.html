@@ -9,9 +9,11 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
 </head>
 <body style="background-image:url(/static/images/fon.jpg)">
-        <span class="round-ON" id="change-bright" onclick="openbox('slider-button')"></span>
 
-        <div id="info"><h1>Система умный дом, авторы : Пилипенко и Ткаченко (ИТШИ 19 3)</h1></div>
+        <div id="info"><h1>Система умный дом. Разработчик: Пилипенко Р. О.</h1></div>
+
+        <div style="float: left; width: 35%; margin-left: 50px; padding-left: 100px;">
+        <span class="round-ON" id="change-bright" onclick="openbox('slider-button')"></span>
 
         <div id="test" onclick="switchBulb()">
             {% if states == False %}
@@ -22,7 +24,7 @@
         </div>
 
         <p id="t-hall">{{states_temperature['bedroom']}} C</p>
-        
+
         <p id="value-bright">Освещение: {{states['brightness']}}%</p>
 
         <div class="rooms">
@@ -31,7 +33,7 @@
 
         <div class="slider-button" id="slider-button">
             <div class="slidecontainer" id="slider">
-            <input type="range" min="1" max="100" value={{states['brightness']}} onmouseup="change_brightness()" class="slider" id="myRange">
+            <input type="range" min="0" max="100" value={{states['brightness']}} onmouseup="change_brightness()" class="slider" id="myRange">
             </div>
         </div>
 
@@ -47,7 +49,10 @@
             <br>
             <button onclick="apply_temperature_limits()" id="apply_limits">Применить</button>
         </div>
-        <div style="width:740px;height:400px;margin: 0 auto">
+
+        </div>
+
+        <div style="width:740px;height:400px;margin: 0 auto; float: left;">
             <canvas id="myChart" width="300" height="300"></canvas>
         </div>
 

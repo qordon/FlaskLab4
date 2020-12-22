@@ -2,7 +2,7 @@
     width: 30%; /* Width of the outside container */
     position : absolute;
     top : 420px;
-    left : 590px;
+    left : 10%;
 }
 
 .slider-button{
@@ -35,7 +35,7 @@ float: left;
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #4CAF50; /* Green background */
+    background: rgb(59, 160, 237); /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
 
