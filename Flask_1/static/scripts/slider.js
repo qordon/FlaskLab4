@@ -31,7 +31,7 @@ function create_graphic()
      {
     borderColor: "rgb(0, 0, 255)",
     backgroundColor: "rgba(0, 0, 0, 0)",
-    label: "Нижний порого",
+    label: "Нижний порог",
     data: min_limit,},
     {
     borderColor: "rgb(255, 0, 0)",

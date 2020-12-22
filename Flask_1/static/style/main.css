@@ -45,20 +45,15 @@
     background-color: black;
 }
 
-.button7 {
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-  padding: .8em 1em calc(.8em + 3px);
-  border-radius: 3px;
-  background: rgb(59, 160, 237);
-  box-shadow: 0 -3px rgb(59, 160, 237) inset;
-  transition: 0.2s;
-}
-.button7:hover { background: rgb(53, 167, 110); }
-.button7:active {
-  background: rgb(33,147,90);
-  box-shadow: 0 3px rgb(33,147,90) inset;
+button {
+    background-color: #0a91c7;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 #manager{
